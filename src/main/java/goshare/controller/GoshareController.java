@@ -20,7 +20,7 @@ public class GoshareController {
     
     @RequestMapping("/")
     public String index() {
-        return "Welcome to Goshare!";
+        return "<p>Welcome to Goshare!</p>";
     }
     
     @RequestMapping(value = "/addPoint", method = RequestMethod.POST)
@@ -31,7 +31,8 @@ public class GoshareController {
     
     @RequestMapping(value = "/getNearbyPoints", method = RequestMethod.POST)
     public List<Point> getNearby(@RequestBody Point loc) {
-        return null;
+    	List<Point> points = pointRepo.findAll();
+        return points;
     }
     
 }
