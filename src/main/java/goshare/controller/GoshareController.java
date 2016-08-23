@@ -2,8 +2,8 @@ package goshare.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import Inteface.PointRepository;
-import domain.Point;
+import goshare.domain.Point;
+import goshare.repository.PointRepository;
 
 import java.util.List;
 

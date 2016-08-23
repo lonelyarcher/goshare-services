@@ -1,4 +1,4 @@
-package domain;
+package goshare.domain;
 
 import java.util.List;
 
