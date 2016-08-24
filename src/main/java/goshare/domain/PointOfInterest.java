@@ -1,7 +1,5 @@
 package goshare.domain;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -15,7 +13,6 @@ public class PointOfInterest {
 	@Id
 	private String id;
 	
-	@Indexed
 	private Point position;
 	
 	private PType type;
@@ -24,7 +21,9 @@ public class PointOfInterest {
 	
 	private String desc;
 	
-	private List<Poster> comments;
+
+	@Indexed
+	private String timestamp;
 	
 	public String getId() {
 		return id;
@@ -39,12 +38,7 @@ public class PointOfInterest {
 	public void setType(PType type) {
 		this.type = type;
 	}
-	public List<Poster> getComments() {
-		return comments;
-	}
-	public void setComments(List<Poster> comments) {
-		this.comments = comments;
-	}
+
 	public String getName() {
 		return name;
 	}
@@ -63,6 +57,10 @@ public class PointOfInterest {
 	public void setPosition(Point position) {
 		this.position = position;
 	}
-	
-	
+	public String getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
+	}
 }
