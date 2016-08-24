@@ -3,19 +3,26 @@ package goshare.domain;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
+
 @Document(collection="locations")
-public class Point {
+public class PointOfInterest {
 	
 	@Id
 	private String id;
 	
-	private double longitude;
-	
-	private double latitude;
+	@Indexed
+	private Point position;
 	
 	private PType type;
+	
+	private String name;
+	
+	private String desc;
 	
 	private List<Poster> comments;
 	
@@ -25,18 +32,7 @@ public class Point {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public double getLongitude() {
-		return longitude;
-	}
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
-	}
-	public double getLatitude() {
-		return latitude;
-	}
-	public void setLatitude(double latitude) {
-		this.latitude = latitude;
-	}
+	
 	public PType getType() {
 		return type;
 	}
@@ -48,6 +44,24 @@ public class Point {
 	}
 	public void setComments(List<Poster> comments) {
 		this.comments = comments;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public Point getPosition() {
+		return position;
+	}
+	public void setPosition(Point position) {
+		this.position = position;
 	}
 	
 	
