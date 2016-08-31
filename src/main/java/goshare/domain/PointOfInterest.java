@@ -15,7 +15,7 @@ public class PointOfInterest {
 	
 	private Point position;
 	
-	private PType type;
+	private PType type = PType.OTHER;
 	
 	private String name;
 	
